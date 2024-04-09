@@ -6,7 +6,7 @@ import Logo from "../assets/Logo.svg";
 
 export function Header() {
   return (
-    <View className="w-full flex-row items-center justify-between mt-5 p-2">
+    <View className="w-full flex-row items-center justify-between ">
       <Logo width={100} height={100} />
 
       <TouchableOpacity
