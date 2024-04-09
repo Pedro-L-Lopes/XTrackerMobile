@@ -1,4 +1,6 @@
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
+import React from "react";
+
 import {
   useFonts,
   Inter_400Regular,
@@ -9,6 +11,9 @@ import {
 
 // Components
 import { Loading } from "./src/components/loading";
+
+// Screens
+import { Home } from "./src/screens/Home";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,26 +28,13 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Hello world!</Text>
+    <>
+      <Home />
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-    fontFamily: "Inter_800ExtraBold",
-  },
-});
