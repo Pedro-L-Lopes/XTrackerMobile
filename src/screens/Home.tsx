@@ -8,7 +8,7 @@ import { Header } from "../components/Header";
 import { HabitDay, DAY_SIZE } from "../components/HabitDay";
 
 import { generateDatesFromYearBeginning } from "../utils/generate-dates-from-year-beginning";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Loading } from "../components/loading";
 import dayjs from "dayjs";
 
@@ -46,15 +46,11 @@ export function Home() {
     }
   }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  // useFocusEffect(
-  //   useCallback(() => {
-  //     fetchData();
-  //   }, [])
-  // );
+  useFocusEffect(
+    useCallback(() => {
+      fetchData();
+    }, [])
+  );
 
   if (loading) {
     return <Loading />;
